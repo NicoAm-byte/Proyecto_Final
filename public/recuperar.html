@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <br><br>
+        <h1>Recuperar Contraseña</h1>
+        <form id="recover-form">
+            <input type="email" name="correo" id="correo" placeholder="Correo Electrónico" required />
+            <input type="password" name="nuevaContraseña" id="nuevaContraseña" placeholder="Nueva Contraseña" required />
+            <button type="submit">Recuperar Cuenta</button>
+            <p id="message" style="color: red; display: none;"></p>
+        </form>
+        <button onclick="window.location.href='/pag1.html'" >Regresar</button>
+    </div>
+
+    <script>
+        const recoverForm = document.getElementById('recover-form');
+        const messageElement = document.getElementById('message');
+
+        recoverForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+
+            const correo = document.getElementById('correo').value;
+            const nuevaContraseña = document.getElementById('nuevaContraseña').value;
+
+            try {
+                const response = await fetch('/recuperar', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ correo, nuevaContraseña }),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    messageElement.style.color = 'green';
+                    messageElement.textContent = result.message || 'Contraseña cambiada correctamente.';
+                    messageElement.style.display = 'block';
+                } else {
+                    messageElement.style.color = 'red';
+                    messageElement.textContent = result.message || 'Hubo un error al cambiar la contraseña.';
+                    messageElement.style.display = 'block';
+                }
+            } catch (err) {
+                console.error('Error:', err);
+                messageElement.style.color = 'red';
+                messageElement.textContent = 'Ocurrió un error inesperado.';
+                messageElement.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

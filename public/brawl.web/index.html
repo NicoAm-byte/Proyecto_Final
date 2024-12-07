@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawl Stars Fan Page</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js"></script>
+</body>
+
+</head>
+<body>
+    <!-- Encabezado con logo y perfil -->
+    <header>
+        <img src="img/logo.jpg" alt="Logo Brawl Stars" class="logo">
+        <a href="#profile" class="profile-button">Mi Perfil</a>
+    </header>
+
+    <script>
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el envío del formulario
+            
+            const brawlId = document.getElementById('brawlId').value;
+            
+            // Validar que el ID sea un número o tenga el formato esperado
+            if (!brawlId) {
+                alert('Por favor, ingresa un ID válido');
+                return;
+            }
+        
+            // Hacer la solicitud a una API para obtener los datos del perfil
+            fetch(`https://api.brawlstars.com/v1/players/${brawlId}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': 'Bearer YOUR_API_KEY' // Necesitas obtener una API Key
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data && data.error) {
+                    alert('No se pudo encontrar el perfil. Asegúrate de que el ID sea correcto.');
+                } else {
+                    // Mostrar la información del perfil
+                    document.getElementById('userName').textContent = `Nombre: ${data.name}`;
+                    document.getElementById('userLevel').textContent = `Nivel: ${data.expLevel}`;
+                    
+                    // Mostrar los personajes del usuario
+                    const brawlersList = document.getElementById('userBrawlers');
+                    brawlersList.innerHTML = ''; // Limpiar lista anterior
+        
+                    data.brawlers.forEach(brawler => {
+                        const listItem = document.createElement('li');
+                        listItem.textContent = `${brawler.name} (Nivel: ${brawler.trophies})`;
+                        brawlersList.appendChild(listItem);
+                    });
+        
+                    // Mostrar la sección con la información
+                    document.getElementById('profileInfo').style.display = 'block';
+                }
+            })
+            .catch(error => {
+                alert('Ocurrió un error al obtener los datos.');
+                console.error(error);
+            });
+        });
+        <button onclick="window.location.href='pagina2.html'">Ir a otra página</button>
+
+        </script>
+        
+    <!-- Navegación principal -->
+<nav>
+    <button class="nav-button" onclick="window.location.href='pagina2.html';">Personajes</button>
+    <button class="nav-button" onclick="scrollToSection('inicio')">Inicio</button>
+</nav>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio">
+        <h1>Bienvenidos a la Fan Page de Brawl Stars</h1>
+        <p>¡Explora la emocionante acción de Brawl Stars y conoce a tus personajes favoritos!</p>
+    </section>
+
+    <!-- Sección de Personajes -->
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personajes</title>
+        <style>
+            .character-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+                gap: 20px; /* Espacio entre las tarjetas */
+                padding: 20px; /* Espacio alrededor de todo el contenedor */
+            }
+            .character-card {
+                border: 2px solid #ccc;
+                padding: 10px;
+                text-align: center;
+                border-radius: 8px;
+                background-color: #f9f9f9;
+            }
+            .character-card img {
+                width: 100px;
+                height: 100px;
+                object-fit: contain;
+                margin-bottom: 10px;
+            }
+       
+       
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Carrusel de imágenes */
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Sección de eventos y actualizaciones */
+        .eventos-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .evento {
+            width: 22%;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .evento:hover {
+            transform: translateY(-10px);
+        }
+
+        .evento h3 {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .evento p {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Carrusel Brawl Stars</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #f4f4f4;
+            }
+    
+            /* Contenedor del carrusel */
+            .carousel-container {
+                width: 100%;
+                max-width: 800px;
+                margin: 20px auto;
+                overflow: hidden;
+                position: relative;
+                border: 2px solid #ddd;
+                border-radius: 10px;
+            }
+    
+            /* Carrusel */
+            .carousel {
+                display: flex;
+                transition: transform 1s ease-in-out;
+                width: 100%;
+            }
+    
+            /* Imágenes */
+            .carousel img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                flex-shrink: 0;
+            }
+    
+            /* Botones de navegación */
+            .carousel-buttons {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                padding: 10px;
+                background-color: rgba(255, 255, 255, 0.5);
+                border-top: 1px solid #ddd;
+            }
+    
+            .carousel-buttons button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                font-size: 18px;
+                padding: 10px;
+            }
+    
+            .carousel-buttons button:hover {
+                background-color: #ddd;
+            }
+    
+            /* Puntos de navegación */
+            .carousel-dots {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                padding: 10px;
+            }
+    
+            .carousel-dots button {
+                background-color: #ddd;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+                height: 10px;
+                margin: 0 5px;
+                width: 10px;
+            }
+    
+            .carousel-dots button.active {
+                background-color: #666;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Carrusel de imágenes -->
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="img/angelesydemonios.jpg" alt="Imagen 1">
+                <img src="img/paseee.jpg" alt="Imagen 2">
+                <img src="img/Aspectos.jpg" alt="Imagen 3">
+                <img src="img/otra.jpg" alt="Imagen 4">
+            </div>
+            <div class="carousel-buttons">
+                <button id="prev-button">&#10094;</button>
+                <button id="next-button">&#10095;</button>
+            </div>
+            <div class="carousel-dots">
+                <button class="active"></button>
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+        </div>
+    
+        <script>
+            const carousel = document.querySelector('.carousel');
+            const images = document.querySelectorAll('.carousel img');
+            const totalImages = images.length;
+            let currentIndex = 0;
+    
+            // Función para mover el carrusel
+            function moveCarousel(index) {
+                currentIndex = index;
+                const translateXValue = -currentIndex * 100;
+                carousel.style.transform = `translateX(${translateXValue}%)`;
+                updateDots();
+            }
+    
+            // Función para actualizar los puntos de navegación
+            function updateDots() {
+                const dots = document.querySelectorAll('.carousel-dots button');
+                dots.forEach((dot, index) => {
+                    if (index === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+    
+            // Agregar eventos a los botones de navegación
+            document.getElementById('prev-button').addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    moveCarousel(currentIndex - 1);
+                } else {
+                    moveCarousel(totalImages - 1); // Volver al último
+                }
+            });
+    
+            document.getElementById('next-button').addEventListener('click', () => {
+                if (currentIndex < totalImages - 1) {
+                    moveCarousel(currentIndex + 1);
+                } else {
+                    moveCarousel(0); // Volver al primero
+                }
+            });
+    
+            // Agregar eventos a los puntos de navegación
+            const dots = document.querySelectorAll('.carousel-dots button');
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    moveCarousel(index);
+                });
+            });
+    
+            // Movimiento automático del carrusel cada 3 segundos
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % totalImages;
+                moveCarousel(currentIndex);
+            }, 3000); // Cambia cada 3 segundos (3000 ms)
+        </script>
+
+<head>
+    <link rel="stylesheet" href="styles.css"> <!-- Cambia 'styles.css' por el nombre de tu archivo CSS -->
+</head>
+<body>
+    <div class="eventos-container">
+        <div class="evento">
+            <h3>Evento </h3>
+            <p>And new wallpapers for your phone 🤙.</p>
+            <img src="img/evento1.jpeg" alt="img1">
+        </div>
+        <div class="evento">
+            <h3>Evento </h3>
+            <p>And new wallpapers for your phone 🤙.</p>
+            <img src="img/evento2.jpeg" alt="img2">
+        </div>
+        <div class="evento">
+            <h3>Evento </h3>
+            <p>And new wallpapers for your phone 🤙.</p>
+            <img src="img/evento3.jpeg" alt="img3">
+        </div>
+        <div class="evento">
+            <h3>Evento </h3>
+            <p>And new wallpapers for your phone 🤙.</p>
+            <img src="img/evento4.jpeg" alt="img4">
+        </div>
+    </div>
+    </body>
+
+    </body>
+    </html>
+    

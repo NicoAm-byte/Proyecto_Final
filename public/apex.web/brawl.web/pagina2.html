@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Brawl Stars</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #1a1a1d;
+            color: #ffffff;
+        }
+
+        /* Título animado */
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 20px 0;
+            color: #ffffff;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff0000, #ffa500, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: colorAnimation 6s infinite, moveText 2s infinite alternate;
+        }
+
+        /* Animación de colores */
+        @keyframes colorAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Movimiento del texto */
+        @keyframes moveText {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        /* Contenedor principal */
+        .character-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Botón de volver */
+        .return-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .return-button {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+        }
+
+        .return-button:hover {
+            background-color: #0056b3;
+            box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.7);
+        }
+
+        /* Tarjetas de personajes */
+        .character-card {
+            background-color: #2c2f33;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 15px rgba(255, 193, 7, 0.7);
+        }
+
+        .character-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            background-color: #1a1a1d;
+        }
+
+        .character-card h3 {
+            font-size: 1.2rem;
+            margin: 10px 0;
+            color: #ffffff;
+        }
+
+        .character-card p {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+
+        /* Adaptabilidad para pantallas pequeñas */
+        @media (max-width: 768px) {
+            .character-card {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .character-card {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="return-button-container">
+        <a href="index.html" class="return-button">Volver a la Página Principal</a>
+    </div>
+    <h1>Personajes de Brawl Stars</h1>
+    <div class="character-container">
+        <!-- Personajes -->
+        <div class="character-card">
+            <img src="img/Brawl_Shelly.jpg" alt="Shelly">
+            <h3>Shelly</h3>
+            <p>Una brawler equilibrada y fácil de usar.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/colt.jpg" alt="Colt">
+            <h3>Colt</h3>
+            <p>Especialista en disparos de larga distancia.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/nita.jpg" alt="Nita">
+            <h3>Nita</h3>
+            <p>Controladora con un poderoso oso aliado.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/bull.jpg" alt="Bull">
+            <h3>Bull</h3>
+            <p>Experto en combate cercano con mucha salud.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/jessie.jpg" alt="Jessie">
+            <h3>Jessie</h3>
+            <p>Ingeniera con torreta automática.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/brock.jpg" alt="Brock">
+            <h3>Brock</h3>
+            <p>Lanzador de misiles con alto daño a distancia.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/dynamike.jpg" alt="Dynamike">
+            <h3>Dynamike</h3>
+            <p>Explosivos en abundancia.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/bo.jpg" alt="Bo">
+            <h3>Bo</h3>
+            <p>Arquero experto con minas explosivas.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/tick.jpg" alt="Tick">
+            <h3>Tick</h3>
+            <p>Coloca minas y explota enemigos.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/8 bit.jpg" alt="8-Bit">
+            <h3>8-Bit</h3>
+            <p>Arcade móvil con gran potencia.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/emz.jpg" alt="Emz">
+            <h3>Emz</h3>
+            <p>Experta en redes sociales con ataque venenoso.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/elprimo.jpg" alt="El Primo">
+            <h3>El Primo</h3>
+            <p>Superestrella luchadora con gran fuerza.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/barley.jpg" alt="Barley">
+            <h3>Barley</h3>
+            <p>Lanza botellas explosivas.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/poco.jpg" alt="Poco">
+            <h3>Poco</h3>
+            <p>Curación musical para sus aliados.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/rosa.jpg" alt="Rosa">
+            <h3>Rosa</h3>
+            <p>Especialista en combate cercano y resistente.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/rico.jpg" alt="Rico">
+            <h3>Rico</h3>
+            <p>Dispara balas que rebotan.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/darryl.jpg" alt="Darryl">
+            <h3>Darryl</h3>
+            <p>Rueda y dispara a corta distancia.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/penny.jpg" alt="Penny">
+            <h3>Penny</h3>
+            <p>Utiliza su cañón para dañar a sus enemigos.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/frank.jpg" alt="Frank">
+            <h3>Frank</h3>
+            <p>Usa un gran mazo para atacar a los rivales.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/piper.jpg" alt="Piper">
+            <h3>Piper</h3>
+            <p>Sniper con gran poder a distancia.</p>
+        </div>
+    </div>
+</body>
+</html>
+

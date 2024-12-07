@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #1e1b3a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .profile-header h1 {
+            font-size: 28px;
+            color: #6a1b9a;
+        }
+
+        .profile-details {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .profile-details p {
+            margin-bottom: 10px;
+        }
+
+        .logout-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #6a1b9a;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .logout-button:hover {
+            background-color: #4a148c;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modalDelete {
+        display: none; /* El modal estará oculto inicialmente */
+        position: fixed; /* Fija el modal para que esté siempre visible en la ventana */
+        top: 50%; /* Lo posiciona en el centro vertical */
+        left: 50%; /* Lo posiciona en el centro horizontal */
+        transform: translate(-50%, -50%); /* Ajusta para centrar exactamente */
+        background-color: #1e1b3a; /* Color de fondo */
+        border-radius: 5%; /* Bordes redondeados */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+        padding: 20px; /* Espaciado interno */
+        color: white; /* Color del texto */
+        z-index: 1000; /* Asegura que esté por encima de otros elementos */
+        width: 300px; /* Ancho del modal */
+        text-align: center; /* Centrar texto dentro del modal */
+        }
+    
+        
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        .modal-content input,
+        .modal-content button {
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .close-modal {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <h1>Perfil del Usuario</h1>
+    </header>
+
+    <main class="profile-container">
+        <div id="user-profile">
+            <!-- Los datos del usuario se cargarán dinámicamente aquí -->
+        </div>
+        <button onclick="openEditModal()">Editar Perfil</button>
+        <button onclick="openDeleteModal()">Eliminar Perfil</button>
+        <button id="logoutButton">Cerrar Sesion</button>
+    </main>
+
+    <!-- Modal para Editar Perfil -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <h2>Editar Perfil</h2>
+            <form id="edit-form">
+                <input type="text" name="usuario" placeholder="Usuario" required />
+                <input type="text" name="nombre" placeholder="Nombre" required />
+                <input type="text" name="apellido" placeholder="Apellido" required />
+                <input type="date" name="fecha_nac" placeholder="Fecha de Nacimiento" required />
+                <input type="email" name="correo" placeholder="Correo Electrónico" required />
+                <button type="submit">Guardar Cambios</button>
+                <button type="button" class="close-modal" onclick="closeEditModal()">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Confirmar Eliminación -->
+    <div id="delete-modal" class="modalDelete">
+        <form action="/eliminar" method="POST">
+            <input type="email" id="correo" name="correo" required placeholder="Confirmar correo">
+            <br>
+            <input type="password" id="contraseña" name="contraseña" required placeholder="Confirmar contraseña">
+            <br>
+            <button type="submit">¿Eliminar Cuenta?</button>
+        </form>
+    </div>
+
+
+    <script>
+        const logoutButton = document.getElementById('logoutButton');
+        
+        logoutButton.addEventListener('click', () => {
+            // Redirige al endpoint de logout
+            window.location.href = '/logout';
+        });
+    </script>
+
+<!---->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+    const userProfile = document.getElementById('user-profile');
+
+    try {
+        // Obtener datos del usuario desde el backend
+        const response = await fetch('/perfil');
+        if (!response.ok) throw new Error('No se pudo obtener el perfil');
+
+        const usuario = await response.json();
+
+        // Mostrar los datos del usuario
+        userProfile.innerHTML = `
+            <p><strong>Usuario:</strong> ${usuario.usuario}</p>
+            <p><strong>Nombre:</strong> ${usuario.nombre} ${usuario.apellido}</p>
+            <p><strong>Correo:</strong> ${usuario.correo}</p>
+            <p><strong>Fecha de Nacimiento:</strong> ${usuario.fecha_nac}</p>
+        `;
+
+        // Prellenar los campos del formulario de edición
+        const editForm = document.getElementById('edit-form');
+        editForm.usuario.value = usuario.usuario;
+        editForm.nombre.value = usuario.nombre;
+        editForm.apellido.value = usuario.apellido;
+        editForm.fecha_nac.value = usuario.fecha_nac;
+        editForm.correo.value = usuario.correo;
+
+        // Manejar la edición del perfil
+        editForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(editForm);
+    const data = Object.fromEntries(formData);
+
+    const updateResponse = await fetch(`/perfil/${usuario.id_cuenta}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+    });
+
+    if (updateResponse.ok) {
+        alert('Perfil actualizado correctamente');
+        closeEditModal();
+        location.reload(); // Recargar la página para mostrar los datos actualizados
+    } else {
+        alert('Error al actualizar el perfil');
+    }
+});
+
+
+    } catch (error) {
+        console.error(error);
+        userProfile.innerHTML = `<p>Error al cargar los datos del perfil.</p>`;
+    }
+});
+
+        function openEditModal() {
+            document.getElementById('edit-modal').style.display = 'flex';
+        }
+
+        function closeEditModal() {
+            document.getElementById('edit-modal').style.display = 'none';
+        }
+
+        function openDeleteModal() {
+            document.getElementById('delete-modal').style.display = 'flex';
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('delete-modal').style.display = 'none';
+        }
+
+        async function deleteProfile() {
+    try {
+        // Obtener el ID del usuario desde localStorage
+        const userData = localStorage.getItem('user');
+        if (!userData) {
+            alert("No hay sesión activa. Por favor, inicie sesión.");
+            window.location.href = '/pag1.html';
+            return;
+        }
+
+        const user = JSON.parse(userData);
+
+        // Realizar la solicitud DELETE al backend
+        const response = await fetch(`/perfil/${user.id_cuenta}`, { method: 'DELETE' });
+
+        if (response.ok) {
+            alert('Perfil eliminado correctamente');
+            window.location.href = '/pag1.html'; // Redirigir al login después de eliminar el perfil
+        } else {
+            alert('Error al eliminar el perfil');
+        }
+    } catch (error) {
+        console.error('Error al eliminar el perfil:', error);
+        alert('Error al eliminar el perfil');
+    }
+}
+
+    </script>
+</body>
+</html>

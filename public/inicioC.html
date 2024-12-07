@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameBurst</title>
+    <link rel="stylesheet" href="css/styleC.css">
+    
+</head>
+<body>
+<header>
+
+    <div class="menu container">
+        <href="#" class="logo.movible"><img src="img/Logo1.png" alt="" width="11%">
+        <h1 class="movable"><span class="game">Game</span><span class="burst">Burst</span></h1>
+       <input TYPE="checkbox" id="menu" />
+       <nav class="navbar">
+           <ul>
+               <li><a href="#">Inicio</a></li>
+               <li><a href="productos.html">Productos</a></li>
+               <li><a href="#">Contacto</a></li>
+               <li><a href="perfil.html">Perfil</a></li>
+           </ul>
+       </nav>
+   </div>
+
+   <br><br>
+   
+   <div class="header-content container">
+           <div class="header-txt">
+               <span>Descubre los mejores juegos</span>
+               <h1>Escoje tu juego <br> Favorito y disfrutalo</h1>
+               <div class="menu-item">Sección menú</div>
+           </div>
+   <div class="header-img">
+       <img src="img/right.png" alt="">
+   </div>
+
+<!-- Barra de búsqueda en la parte superior derecha -->
+<div class="search-bar">
+    <input type="text" id="search-barr" placeholder="Buscar juego..." class="search-input" oninput="filterGames()">
+    <ul id="game-list"></ul>
+</div>
+<script src="./js/ScriptGames.js"></script>
+
+</header>
+    <section class="games container">
+  
+        <img class="ba" src="img/ba.png" alt=""></img>
+
+
+        <div class="txt">
+            <h2>Los juegos mas vendidos</h2>
+
+        </div>
+        <div class="games-container">
+            <div class="game">
+                <img src="img/g1.jpg" alt="">
+                <div class="follo">
+                    <img src="img/heart.svg" alt="">
+                    <h3>45 seguidores</h3>
+                </div>
+            </div>
+
+            <div class="game">
+                <img src="img/g2.jpg" alt="">
+
+                <div class="follo">
+                    <img src="img/heart.svg" alt="">
+                    <h3>45 seguidores</h3>
+                </div>
+            </div>
+            <div class="game">
+                <img src="img/g3.jpg" alt="">
+                <div class="follo">
+                    <img src="img/heart.svg" alt="">
+                    <h3>45 seguidores</h3>
+                </div>
+            </div>
+            <div class="game">
+                <img src="img/g4.jpg" alt="">
+                <div class="follo">
+                    <img src="img/heart.svg" alt="">
+                    <h3>45 seguidores</h3>
+                </div>
+            </div>
+    </section>
+
+    <section class="about container">
+        <div class="txt">
+            <h2>Articulos recomendados</h2>
+        </div>
+        <div class="games">
+            <img src="img/b1.jpg" alt="">
+            <h4>
+                Valorant combina precisión táctica con acción intensa en un juego de disparos 5v5. 
+                Elige entre diversos agentes, cada uno con habilidades únicas, y trabaja en equipo para ganar en partidas estratégicas. 
+                Prepárate para un desafío competitivo y emocionante en cada ronda. ¡Únete a la batalla y demuestra tu habilidad!
+            </h4>
+        </div>
+        <div class="games"> 
+            <div class="about-in1">
+                <img src="img/b2.jpg" alt="">
+                <h4>
+                    Apex Legends ofrece una experiencia battle royale dinámica y llena de acción. 
+                    Forma equipos con personajes únicos y utiliza habilidades especiales para superar a tus oponentes. 
+                    Con mapas en constante evolución y eventos emocionantes, cada partida es una nueva aventura. ¡Únete a la acción y busca la victoria!
+                </h4>
+            </div>
+            <br><br>
+            <div class="about-in2">
+                <img src="img/b3.jpg" alt="">
+                <h4>
+                    Lineage 2 te sumerge en un épico mundo de fantasía y aventuras. 
+                    Explora vastos territorios, combate contra poderosos enemigos y únete a otros jugadores en una rica experiencia MMORPG. 
+                    Con su profunda historia y desafiantes misiones, cada momento es una nueva oportunidad para heroísmo. ¡Embárcate en tu próxima aventura hoy!
+                    
+                </h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="news container"> 
+
+    <div class="txt">
+        <h2>Articulos recomendados</h2>
+    </div>
+
+    <div class="news-content">
+
+        <div class="games">
+            <div class="news-1">
+                <img src="img/honkai.png" alt="honkai star rail" width="250">
+             <div class="news-right">
+                    <h3>Honkai: Star Rail</h3>
+                    <p>
+                        juego de rol por turnos desarrollado por HoYoverse, que combina elementos de exploración espacial y combate estratégico. Ambientado en un universo de ciencia ficción, el juego sigue a los Trailblazers (Exploradores) mientras viajan a través de diferentes mundos, cada uno con su propia historia, personajes y desafíos.
+                </p>
+                <div class="subir suave animation"><a href="honkai/index.html"><h3>Más sobre<span class="game"> Honkai</span></h1></a></div>
+                </div>
+                <br>
+            </div>
+
+            <div class="news-1">
+                <img src="img/fnaflogo.jpg" alt="" width="250">
+             <div class="news-right">
+                    <h3>Esto es five nights at freddy's</h3>
+                    <p>
+                        five nights at freddy's mezcla Horror y diversion en frenéticas partidas nocturnas. 
+                        vigila, cierra y abre puertas en un juego lleno de suspenso.
+                </p>
+                <div class="subir suave animation"><a href="Fnaf/Index.html"><h3>Más sobre<span class="game"> Fnaf</span></h1></a></div>
+                </div>
+                <br>
+            </div>
+
+            <div class="news-1">
+                <img src="img/brawl.jpg" alt="" width="250">
+             <div class="news-right">
+                    <h3>Brawl stars</h3>
+                    <p>
+                        Brawl Stars es un juego multijugador online de combate en tiempo real desarrollado por Supercell. Los jugadores eligen entre diferentes "brawlers" (personajes con habilidades y características únicas) y participan en batallas rápidas de hasta 3 contra 3 o en modos especiales. Existen diversos modos de juego, como "Gem Grab", "Heist" y "Bounty", y el objetivo generalmente es completar misiones o derrotar al equipo contrario. El juego es gratuito, pero incluye microtransacciones para obtener personajes, skins y otros elementos cosméticos.
+                </p>
+                <div class="subir suave animation"><a href="brawl.web/index.html"><h3>Más sobre<span class="game"> Brawl Stars</span></h1></a></div>
+                </div>
+                <br>
+            </div>
+
+
+            <div class="news-1">
+                <img src="img/apex.jpg" alt="" width="250">
+             <div class="news-right">
+                    <h3>Apex Legends</h3>
+                    <p>
+                        Apex Legends es un juego de batalla real gratuito desarrollado por Respawn Entertainment. Los jugadores eligen entre una serie de "leyendas", personajes con habilidades especiales, y se agrupan en equipos de tres para luchar hasta ser el último equipo en pie. El juego se destaca por su jugabilidad fluida, el sistema de ping para la comunicación sin necesidad de chat de voz, y el uso de un sistema de resurrección de compañeros caídos. Es muy popular por su ritmo rápido, sus gráficos de alta calidad y la constante adición de contenido nuevo
+                </p>
+                <div class="subir suave animation"><a href="apex.web/index.html"><h3>Más sobre<span class="game"> Apex Legends</span></h1></a></div>
+                </div>
+                <br>
+            </div>
+
+
+
+            <div class="news-1">
+                <img src="img/FC25.webp" alt="" width="250">
+             <div class="news-right">
+                    <h3>FC 25</h3>
+                    <p>
+                        FC 25 es el nombre más reciente del popular simulador de fútbol de EA Sports, conocido previamente como FIFA. El juego ofrece una experiencia de fútbol realista, donde los jugadores controlan equipos reales o creados para competir en partidos dentro de diversas ligas, torneos y modos de juego como Ultimate Team, Carrera y Pro Clubs. Con gráficos avanzados, inteligencia artificial mejorada y un enfoque en la jugabilidad en línea, FC 25 sigue siendo uno de los títulos más populares para los fanáticos del fútbol en los videojuegos.
+                </p>
+                <div class="subir suave animation"><a href="FC25/index.html"><h3>Más sobre<span class="game"> FC 25</span></h1></a></div>
+                </div>
+                <br>
+            </div>
+
+            <div class="news-1">
+                <img src="img/Mortal.webp" alt="" width="250">
+             <div class="news-right">
+                    <h3>Mortal Kombat</h3>
+                    <p>
+                        Mortal Kombat es una franquicia de videojuegos de lucha creada por Ed Boon y John Tobias. Es famosa por su violencia extrema, incluyendo "Fatalities" (movimientos finales de alto impacto que eliminan al oponente de manera grotesca). Los jugadores seleccionan personajes con habilidades especiales y luchan en uno contra uno, intentando agotar la barra de vida del oponente. Con cada entrega, Mortal Kombat ha introducido nuevos personajes, escenarios y mecánicas, manteniéndose como una de las series más influyentes en el género de lucha desde su debut en 1992.
+                </p>
+                <div class="subir suave animation"><a href="Mortalkombat/index.html"><h3>Más sobre<span class="game"> Mortal kombat</span></h1></a></div>
+                </div>
+                <br>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="social-bar">
+        <p>Síguenos en nuestras redes sociales</p>
+        <div class="social-icons">
+            <a href="https://web.facebook.com/people/GameBurst/61567149252487/?mibextid=ZbWKwL" class="social-icon">
+                <img src="img/facebook (2).png" alt="Facebook">
+                Facebook
+            </a>
+            <a href="#" class="social-icon">
+                <img src="img/gorjeo.png" alt="Twitter">
+                Twitter
+            </a>
+            <a href="#" class="social-icon">
+                <img src="img/instagram.png" alt="Instagram">
+                Instagram
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="copyright">
+        &copy; 2024 GameBurst Todos los derechos reservados.
+    </div>
+    
+    <div class="logo-container">
+        <img src="img/Logo2.png" alt="Logo fijo" class="logo movible"></div>
+
+        
+
+</footer>
+</body>
+</html>

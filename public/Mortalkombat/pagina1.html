@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes de Mortal Kombat 11</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #1a1a1d;
+            color: #ffffff;
+        }
+
+        /* Título animado */
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 20px 0;
+            color: #ffffff;
+            font-weight: bold;
+            background: linear-gradient(90deg, #ff0000, #ffa500, #ffff00, #00ff00, #00ffff, #0000ff, #ff00ff);
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: colorAnimation 6s infinite, moveText 2s infinite alternate;
+        }
+
+        /* Animación de colores */
+        @keyframes colorAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Movimiento del texto */
+        @keyframes moveText {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        /* Contenedor principal */
+        .character-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Botón de volver */
+        .return-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .return-button {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            font-weight: bold;
+        }
+
+        .return-button:hover {
+            background-color: #0056b3;
+            box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.7);
+        }
+
+        /* Tarjetas de personajes */
+        .character-card {
+            background-color: #2c2f33;
+            border: 2px solid #ffc107;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 100%;
+        }
+
+        .character-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 15px rgba(255, 193, 7, 0.7);
+        }
+
+        .character-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            aspect-ratio: 4 / 3; /* Mantiene la proporción de las imágenes */
+            margin-bottom: 15px;
+            background-color: #1a1a1d;
+        }
+
+        .character-card h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #ffffff;
+        }
+
+        .character-card p {
+            font-size: 1rem;
+            color: #cccccc;
+        }
+
+        /* Sección de tutorial */
+        .tutorial-section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        .tutorial-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .tutorial-section iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Adaptabilidad para pantallas pequeñas */
+        @media (max-width: 1024px) {
+            .character-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .character-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="return-button-container">
+        <a href="index.html" class="return-button">INICIO</a>
+    </div>
+    <h1>Personajes de Mortal Kombat 11</h1>
+    <div class="character-container">
+        <!-- Personajes -->
+        <div class="character-card">
+            <img src="img/scor111.jpg" alt="Scorpion">
+            <h3>Scorpion</h3>
+            <p>El ninja del fuego y vengador eterno.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/sub zero111.jpg" alt="Sub-Zero">
+            <h3>Sub-Zero</h3>
+            <p>Maestro del hielo y protector del Lin Kuei.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/raider11.jpg" alt="Raiden">
+            <h3>Raiden</h3>
+            <p>Dios del trueno y defensor de Earthrealm.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/kitana11.jpg" alt="Kitana">
+            <h3>Kitana</h3>
+            <p>La princesa de Edenia y maestra de los abanicos.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/johnny.jpg" alt="Johnny Cage">
+            <h3>Johnny Cage</h3>
+            <p>Actor arrogante con habilidades en combate.</p>
+        </div>
+        <div class="character-card">
+            <img src="img/sonya.jpg" alt="Sonya Blade">
+            <h3>Sonya Blade</h3>
+            <p>Líder militar y experta en artes marciales.</p>
+        </div>
+    </div>
+
+    <!-- Sección de tutorial -->
+    <div class="tutorial-section">
+        <h2>Tutorial de Fatalities</h2>
+        <iframe src="img/GUIA DE  FATALITIES MORTAL KOMBAT X (Secretos) - Ramiel-GP (720p, h264, youtube).mp4" allowfullscreen></iframe>
+    </div>
+</body>
+</html>

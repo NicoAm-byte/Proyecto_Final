@@ -1,0 +1,194 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Fondo de la página */
+body {
+    background: linear-gradient(to bottom, #ffdd57, #ff7518); /* Fondo amarillo y naranja */
+    background-size: cover;
+    color: #000000; /* Texto negro */
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff; /* Fondo negro */
+}
+
+.logo {
+    height: 60px;
+}
+
+.profile-button {
+    background-color: #ff3f3f; /* Rojo vibrante */
+    color: #000000; /* Texto negro */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.2s ease;
+}
+
+.profile-button:hover {
+    background-color: #cc3232; /* Rojo más oscuro */
+    transform: scale(1.1);
+}
+
+/* Navegación */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background-color: #000000; /* Gris oscuro */
+}
+
+.nav-button {
+    background-color: #0073e6; /* Azul característico */
+    color: #000000; /* Texto negro */
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #005bb5; /* Azul más oscuro */
+    transform: translateY(-5px);
+}
+
+/* Sección de Inicio */
+#inicio {
+    padding: 40px;
+    text-align: center;
+}
+
+/* Sección de Personajes */
+#personajes {
+    padding: 40px;
+    text-align: center;
+}
+
+.character-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.character-card {
+    background-color: #1c1c1c; /* Fondo negro */
+    border-radius: 10px;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    color: #000000; /* Texto negro */
+    transition: transform 0.3s ease;
+}
+
+.character-card:hover {
+    transform: scale(1.05);
+}
+
+.character-card img {
+    width: 100px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Estilo para los encabezados (h3) de los personajes */
+h3 {
+    font-family: 'Roboto', sans-serif; /* Fuente más moderna para los nombres de personajes */
+    font-size: 20px; /* Tamaño de fuente para los nombres */
+    color: #000000; /* Texto negro */
+    margin: 10px 0; /* Márgenes para separar el nombre de la imagen */
+    font-weight: bold; /* Hacer los nombres de los personajes en negrita */
+}
+
+/* Estilo para los textos de descripción (p) */
+.character-info p {
+    font-family: 'Open Sans', sans-serif; /* Fuente más legible para las descripciones */
+    font-size: 14px; /* Tamaño de texto más pequeño para la descripción */
+    color: #000000; /* Texto negro */
+    line-height: 1.4; /* Espaciado entre las líneas de la descripción */
+    margin: 0; /* Eliminar márgenes adicionales */
+}
+
+/* Fuente global para toda la página */
+body {
+    font-family: 'Arial', sans-serif; /* Fuente predeterminada para la página */
+    line-height: 1.6; /* Espaciado entre líneas */
+    background-color: #f4f4f4; /* Color de fondo general */
+    margin: 0;
+    padding: 0;
+}
+
+/* Tipografía de las tarjetas de los personajes */
+.character-card {
+    border: 2px solid #0073e6; /* Azul brillante */
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Fondo claro */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px;
+}
+
+/* Estilo global para los textos de los personajes dentro de las tarjetas */
+.character-info {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #000000; /* Texto negro */
+    font-family: 'Open Sans', sans-serif; /* Fuente clara y fácil de leer */
+}
+
+/* Estilo para los enlaces (si es que los agregas más tarde) */
+a {
+    font-family: 'Arial', sans-serif;
+    color: #0073e6; /* Azul para resaltar enlaces */
+    text-decoration: none; /* Sin subrayado */
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón por encima */
+}
+
+
+
+/* Estilo del contenedor de eventos */
+.eventos-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los eventos se distribuyan en varias filas si es necesario */
+    gap: 20px; /* Espaciado entre los eventos */
+    justify-content: center; /* Centra los eventos horizontalmente */
+}
+
+/* Estilo de cada evento individual */
+.evento {
+    background-color: #f9f9f9; /* Color de fondo del cuadro */
+    border: 1px solid #ddd; /* Borde alrededor del cuadro */
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 15px; /* Espaciado interno */
+    width: 250px; /* Ancho fijo para cada evento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    text-align: center; /* Centra el contenido dentro del cuadro */
+}
+
+/* Estilo para las imágenes */
+.evento img {
+    width: 100%; /* La imagen ocupará el ancho completo del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    border-radius: 5px; /* Esquinas redondeadas para las imágenes */
+}

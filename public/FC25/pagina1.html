@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novedades y Actualizaciones</title>
+    <style>
+        /* Estilos generales */
+        body {
+            background-color: #111;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-btn, .home-btn {
+            background: none;
+            color: white;
+            border: 1px solid white;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .filter-btn:hover, .home-btn:hover {
+            background-color: #444;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .news-card {
+            background-color: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 1rem;
+        }
+
+        .news-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .news-card h2 {
+            padding: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .news-card p {
+            padding: 0.5rem 1rem;
+            color: #aaa;
+        }
+
+        .video-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .video-section iframe {
+            width: 80%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Novedades y Actualizaciones</h1>
+        <nav>
+            <a href="index.html" class="home-btn">INICIO</a>
+    </header>
+
+    <section class="news-grid">
+        <!-- Tarjeta 1 -->
+        <article class="news-card">
+            <img src="img/noticias1.jpg" alt="FC PRO LIVE">
+            <h2>Football Ultimate Team™ 25</h2>
+            <p></p>
+            <p>Football Ultimate Team
+                Elige tu artículo de futbolista favorito y juega en equipo con colegas en partidos de Rush de 5c5. Cambia tu estilo de juego con solo pulsar un botón gracias a los artículos de mánager y encuentra las sinergias perfectas entre los artículos de futbolista según los roles de futbolista concretos.</p>
+        </article>
+
+        <!-- Tarjeta 2 -->
+        <article class="news-card">
+            <img src="img/noticias2.jpg" alt="Estrellas atléticas">
+            <h2>Football Ultimate Team™ 25</h2>
+            <p></p>
+            <p>Realismo inigualable
+                Disfruta de un realismo inigualable en EA SPORTS FC™ 25 con la experiencia más realista de las competiciones, clubes y estrellas más importantes de todo el fútbol, con más de 19 000 futbolistas, 700 equipos, 120 estadios y 30 ligas. EA SPORTS FC™ 25 es el único lugar donde podrás jugar la emblemática UEFA Champions League, la UEFA Europa League, la UEFA Europa Conference League, la CONMEBOL Libertadores, la Premier League, la Bundesliga y LaLiga EA SPORTS en un mismo juego, además de la UEFA Women's Champions League, la Barclays Women's Super League, la D1 Arkema, la National Women's Soccer League y la Google Pixel Frauen-Bundesliga..</p>
+        </article>
+
+        <!-- Tarjeta 3 -->
+        <article class="news-card">
+            <img src="img/noticias3.jpg" alt="Centuriones">
+            <h2>Football Ultimate Team™ 25</h2>
+            <p></p>
+            <p>FC IQ
+                La actualización de los fundamentos tácticos del juego ofrece un mayor control estratégico y un movimiento en conjunto del equipo más realista. FC IQ también utiliza un nuevo modelo de IA, basado en datos reales, para influir en las tácticas de los jugadores mediante los nuevos roles de futbolista..</p>
+        </article>
+
+        <!-- Tarjeta 4 -->
+        <article class="news-card">
+            <img src="img/noticias4.jpg" alt="Vanguardistas">
+            <h2>Football Ultimate Team™ 25</h2>
+            <p></p>
+            <p>Rush de 5c5
+                Forma equipo con los partidos 5 contra 5 de Rush: una nueva forma de jugar al fútbol urbano con tus amistades en Football Ultimate Team™, Clubes y Partido rápido.</p>
+        </article>
+    </section>
+
+    <!-- Sección de video -->
+    <section class="video-section">
+        <h2>Video Destacado</h2>
+        <iframe src="img/MI PRIMER FUT DRAFT DE FC 25 (LLENO DE HÉROES) DjMaRiiO - DjMaRiiO (1080p, h264, youtube).mp4" allowfullscreen></iframe>
+    </section>
+</body>
+</html>

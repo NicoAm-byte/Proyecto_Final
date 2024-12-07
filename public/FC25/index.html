@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EA Sports FC 25</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        /* General */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: white;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #111;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header .logo img {
+            height: 36px;
+            width: auto;
+        }
+
+        header h1 {
+            font-size: 34px;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        .buy-now {
+            background-color: #00c853;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Main Content */
+        .hero {
+            display: grid;
+            grid-template-columns: 2fr 3fr;
+            gap: 50px;
+            align-items: center;
+            padding: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .info h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .info p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .trailer {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .platforms img {
+            width: 40px;
+            margin: 5px;
+        }
+
+        /* Carrusel */
+        .carousel-inner img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 90px;
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        /* Redes Sociales */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            color: white;
+            font-size: 36px;
+        }
+
+        .social-icons img {
+            width: 86px;
+            height: 86px;
+        }
+
+        /* Sección del tráiler */
+        #trailer-section {
+            text-align: center;
+            padding: 50px;
+            background-color: #111;
+            margin-top: 50px;
+        }
+
+        #trailer-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #trailer-section iframe {
+            width: 80%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="https://drop-assets.ea.com/images/7L56ne8TsLBD7f7Rt4wIMk/8c7869d7233a34407315ddeee8afdbda/G5_FC25_Horizontal_Rev.png"
+             alt="Logotipo de FC 25">
+    </div>
+    <nav>
+        <ul>
+            <a href="pagina1.html">Noticias</a>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section class="hero">
+        <div class="image">
+            <img src="img/portada.png" alt="Portada del juego EA Sports FC 25">
+        </div>
+        <div class="info">
+            <h2>EA SPORTS FC™ 25</h2>
+            <p>Descubre más formas de ganar por el club en EA SPORTS FC™ 25. Forma equipo con tus colegas en tus modos favoritos con el nuevo Rush de 5c5 y triunfa gracias a un control táctico más realista que nunca con FC IQ.</p>
+            <div class="buttons">
+                <button class="buy-now">Comprar ahora</button>
+                <button class="trailer" onclick="document.getElementById('trailer-section').scrollIntoView({behavior: 'smooth'})">Ver tráiler</button>
+            </div>
+            <div class="platforms">
+                <!-- Íconos de las plataformas -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrusel -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <!-- Carrusel contenido -->
+    </div>
+
+    <!-- Sección del tráiler -->
+    <section id="trailer-section">
+        <h2>Tráiler de EA SPORTS FC™ 25</h2>
+        <div>
+            <iframe src="img/EA SPORTS FC 25 _ Official Reveal Trailer - EA SPORTS FC (1080p, h264, youtube).mp4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Redes Sociales -->
+    <div class="social-icons">
+        <!-- Contenido de íconos sociales -->
+    </div>
+    <!-- Redes Sociales -->
+    <div class="social-icons">
+        <a href="https://www.instagram.com/easportsfces/" target="_blank"><img src="img/IG.jpg" alt=""></a>
+        <a href="https://x.com/EAFCNews" target="_blank"><img src="img/TT.jpg" alt=""></a>
+        <a href="https://www.facebook.com/easportsfc/" target="_blank"><img src="img/FC.jpg" alt=""></a>
+    </div>
+</main>
+</body>
+</html>

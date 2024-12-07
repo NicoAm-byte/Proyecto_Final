@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortal Kombat 11 Fan Page</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 120px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .nav-button {
+            background-color: #ff0000;
+            border: none;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .nav-button:hover {
+            background-color: #cc0000;
+        }
+
+        /* Carrusel */
+        .carousel-container {
+            max-width: 100%;
+            height: 500px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+            min-width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            color: #fff;
+            font-size: 30px;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        .carousel-button.left {
+            left: 20px;
+        }
+
+        .carousel-button.right {
+            right: 20px;
+        }
+
+        /* Luchadores */
+        .character-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .character-card {
+            border: 2px solid #ff0000;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            background-color: #1a1a1a;
+        }
+
+        .character-card img {
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+
+        .trailer-container {
+            text-align: center;
+            margin: 40px auto;
+        }
+
+        .trailer-container video {
+            max-width: 80%;
+            border: 2px solid #ff0000;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <img src="img/portada2.avif" alt="Logo Mortal Kombat 11" class="logo">
+        <button class="nav-button" onclick="scrollToCharacters()" ><a href="pagina1.html">Personajes</a></button>
+
+    </header>
+
+    <!-- Sección de Inicio -->
+    <section id="inicio">
+        <h1>Bienvenidos a la Fan Page de Mortal Kombat 11</h1>
+    </section>
+
+    <!-- Carrusel -->
+    <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <img src="img/1_resized.jpg" alt="MK11 Escena 1">
+            <img src="img/2.jpg" alt="MK11 Escena 2">
+            <img src="img/3.jpg" alt="MK11 Escena 3">
+            <img src="img/4.jpg" alt="MK11 Escena 4">
+        </div>
+        <button class="carousel-button left" onclick="moveCarousel(-1)">&#10094;</button>
+        <button class="carousel-button right" onclick="moveCarousel(1)">&#10095;</button>
+    </div>
+
+    <!-- Sección de Luchadores -->
+    <section id="personajes">
+        <h2>Luchadores</h2>
+        <div class="character-container">
+            <div class="character-card">
+                <img src="img/per1.jpg" alt="Scorpion">
+                <p>Scorpion</p>
+            </div>
+            <div class="character-card">
+                <img src="img/per2.jpg" alt="Sub-Zero">
+                <p>Sub-Zero</p>
+            </div>
+            <div class="character-card">
+                <img src="img/per3.jpg" alt="Raiden">
+                <p>Raiden</p>
+            </div>
+            <div class="character-card">
+                <img src="img/per4.jpg" alt="Kitana">
+                <p>Kitana</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Trailer -->
+    <section id="trailer" class="trailer-container">
+        <h2>Tráiler Oficial</h2>
+        <video controls>
+            <source src="img/Mortal Kombat 11 - Official Launch Trailer - GameSpot (1080p, h264, youtube).mp4" type="video/mp4">
+            Tu navegador no soporta reproducción de video.
+        </video>
+    </section>
+
+    <!-- Script -->
+    <script>
+        const carousel = document.getElementById('carousel');
+        let currentIndex = 0;
+
+        // Función para mover el carrusel
+        function moveCarousel(direction) {
+            const items = carousel.children.length;
+            currentIndex = (currentIndex + direction + items) % items;
+            const offset = -currentIndex * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+
+        // Botón para desplazarse a los personajes
+        function scrollToCharacters() {
+            document.getElementById('personajes').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Rotación automática del carrusel (opcional)
+        setInterval(() => moveCarousel(1), 5000);
+    </script>
+</body>
+</html>

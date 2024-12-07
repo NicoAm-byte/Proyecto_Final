@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/stylepag1.css">
+    <title>Modern Login Page | AsmrProg</title>
+</head>
+
+<body>
+    <!-- Modal para mensajes genéricos -->
+    <div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 9999; justify-content: center; align-items: center;">
+        <div id="modal-content" style="background-color: #6a0dad; color: white; padding: 20px; border-radius: 10px; text-align: center;">
+            <p id="modal-message">Mensaje</p>
+            <button onclick="closeModal()" style="background-color: white; color: #6a0dad; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">Aceptar</button>
+        </div>
+    </div>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form id="register-form">
+                <input type="text" name="usuario" placeholder="Usuario" required />
+                <input type="text" name="nombre" placeholder="Nombre" required />
+                <input type="text" name="apellido" placeholder="Apellido" required />
+                <input type="date" name="fecha_nac" required />
+                <input type="email" name="correo" placeholder="Correo Electrónico" required />
+                <input type="password" name="contraseña" placeholder="Contraseña" required />
+                <button type="submit">Registrar</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in">
+            <form id="login-form">
+                <h1>Iniciar Sesión</h1>
+                <input type="email" name="correo" placeholder="Correo Electrónico" required />
+                <input type="password" name="contraseña" placeholder="Contraseña" required />
+                <button type="submit">Iniciar Sesión</button>
+                <p id="error-message" style="color: red; display: none;"></p>
+                <a href="/recuperar.html"><p> ¿olvidaste tu contraseña?</p></a>
+            </form>
+        </div>
+
+        
+
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Bienvenido De nuevo!</h1>
+                    <p>Introduzca sus datos personales para utilizar todas las funciones del sitio</p>
+                    <button class="hidden" id="login">Inicia Sesión</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Hola, Amigo!</h1>
+                    <p>Registrese con sus datos personales para utilizar todas las funciones del sitio</p>
+                    <button class="hidden" id="register">Regsitrate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <script>
+        // Modal genérico para mensajes
+        function showModal(message) {
+            const modal = document.getElementById('modal');
+            const modalMessage = document.getElementById('modal-message');
+            modalMessage.textContent = message;
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = 'none';
+        }
+
+        // Registro
+        const registerForm = document.getElementById('register-form');
+        registerForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(registerForm);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch('/validar', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+                if (response.ok && result.success) {
+                    showModal('Usuario registrado exitosamente');
+                    setTimeout(() => {
+                        closeModal();
+                        window.location.href = '/pag1'; // Redirigir
+                    }, 1500);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        });
+
+        // Inicio de sesión
+        const loginForm = document.getElementById('login-form');
+        const errorMessage = document.getElementById('error-message');
+
+        loginForm.addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(loginForm);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Guardar usuario en localStorage y redirigir
+                    localStorage.setItem('user', JSON.stringify(result.user));
+                    window.location.href = '/inicioC.html';
+                } else {
+                    // Mostrar alerta con mensaje de error
+                    showModal('Credenciales incorrectas');
+                }
+            } catch (err) {
+                console.error('Error:', err);
+                showModal('Ocurrió un error inesperado.');
+            }
+        });
+    </script>
+    <script src="js/animacion.js"></script>
+</body>
+
+</html>

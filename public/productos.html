@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameBurst</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<boddy>
+
+
+    <header class="productos">
+        <div class="menu container">
+
+             <href="#" class="logo.movible"><img src="img/Logo1.png" alt="" width="11%">
+             <h1 class="movable"><span class="game">Game</span><span class="burst">Burst</span></h1>
+       <input TYPE="checkbox" id="menu" />
+            <input TYPE="checkbox" id="menu" />
+            <label for="menu">
+                <img src="img/menu.png" class="menu-icono" alt="">
+            </label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="pag1.html">Registro/Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="contenedo"><h1>Productos<span class="game"> recomendados</span></h1></div>
+    <br><br>
+    <div class="contenedo">
+        <div class="gallery animation relative suave">
+            <a href="https://mobentas.com/product/genshin-impact/">
+              <img src="img/bendicion.webp" alt="Cinque Terre" width="30%">
+            </a>
+            <div class="desc">bendicion Lunar <hr><br><b>Genshin Impact</b> 20.000COP
+            </div>
+            
+        </div>
+        <div class="gallery animation relative suave">
+            <a href="https://mobentas.com/product/genshin-impact/">
+              <img src="img/paresumi.png" alt="Cinque Terre" width="30%">
+            </a>
+            <div class="desc">Pase de suministros<hr><br><b>Honkai: Star rail</b> 20.000COP
+            </div>
+        </div>
+
+        <div class="gallery animation relative suave">
+            <a href="https://mobentas.com/product/genshin-impact/">
+              <img src="img/Genshin-Impact-Cards-PB-Himno-de-la-Perla.webp" alt="Cinque Terre" width="30%">
+            </a>
+            <div class="desc">Pase de batalla<hr><br><b>Genshin Impact</b> 50.000COP
+            </div>
+        </div>  
+
+        <div class="gallery animation relative suave">
+            <a href="https://mobentas.com/product/genshin-impact/">
+              <img src="img/Pase_de_suministros_del_expreso-removebg-preview.png" alt="Cinque Terre" width="30%">
+            </a>
+            <div class="desc">Honor anonimo<hr><br><b>Honkai: Star Rail</b> 50.000COP
+            </div>
+        </div>  
+    </div>
+
+    <div class="contenedo"><h1>Nuestros<span class="game"> productos</span></h1></div>
+    <div class="contenedo">
+
+        <div class="contenedo">
+            <div class="gallery animation relative suave">
+                <a href="https://mobentas.com/product/genshin-impact/">
+                  <img src="img/genshin-impact-genesis-crystals1707515203_picture_item_small.png" alt="Cinque Terre" width="30%">
+                </a>
+                <div class="desc">Cristales Genesis <hr><br><b>Genshin Impact</b> 3.000COP - 300.000COP
+                </div>
+                
+            </div>
+            <div class="gallery animation relative suave">
+                <a href="https://mobentas.com/product/genshin-impact/">
+                  <img src="img/honkaiss.png" alt="Cinque Terre" width="30%">
+                </a>
+                <div class="desc">Esquirla onirica<hr><br><b>Honkai: Star rail</b> 3.000COP - 300.000COP
+                </div>
+            </div>
+
+            <div class="gallery animation relative suave">
+                <a href="https://mobentas.com/product/genshin-impact/">
+                  <img src="img/Icon_VBucks.webp" alt="Cinque Terre" width="30%">
+                </a>
+                <div class="desc">Pavos<hr><br><b>Fortnite</b> 30.000COP - 320.000COP
+                </div>
+                <br><br>
+            </div>  
+
+            <div class="gallery animation relative suave">
+                <a href="https://mobentas.com/product/genshin-impact/">
+                  <img src="img/463-4631194_apex-coins-transparent-hd-png-download-removebg-preview.png" alt="Cinque Terre" width="30%">
+                </a>
+                <div class="desc">Apex coins<hr><br><b>Apex Legends</b> 30.000COP - 320.000COP
+                </div>
+                
+            </div>  
+        </div>
+
+    </div>
+    <script>
+        // Obtener el ID del usuario de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('id');
+
+        if (userId) {
+            console.log(`Usuario identificado con ID: ${userId}`);
+            // Mostrar mensaje de bienvenida con el ID del usuario
+            document.getElementById('welcomeMessage').innerHTML = `<h2>Bienvenido, usuario con ID ${userId}!</h2>`;
+        } else {
+            console.log('Usuario no identificado');
+            document.getElementById('welcomeMessage').innerHTML = `<h2>Usuario no identificado</h2>`;
+        }
+    </script>
+</boddy>    
+
+</html>

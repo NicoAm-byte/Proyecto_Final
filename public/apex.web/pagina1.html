@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Legends</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #171717; /* Fondo oscuro similar al de Apex */
+            color: white; /* Color de texto blanco */
+        }
+
+        /* Contenedor principal */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* Estilo para el título con animación */
+        .title {
+            font-size: 48px;
+            font-family: 'Impact', sans-serif;
+            background: linear-gradient(90deg, #ff0015, #ffffff, #ffffff); /* Degradado */
+            background-size: 200% 100%; /* Doble para el desplazamiento */
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            animation: moveGradient 4s linear infinite;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            margin-bottom: 30px;
+        }
+
+        /* Animación para el degradado */
+        @keyframes moveGradient {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        /* Estilo para las filas de personajes */
+        .character-row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        /* Estilo para cada personaje */
+        .character {
+            background-color: #2e2e2e; /* Fondo de los personajes */
+            padding: 20px;
+            margin: 0 10px;
+            text-align: center;
+            border-radius: 10px;
+            width: 200px;
+            font-size: 18px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .character:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.6);
+        }
+
+        .character img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para el botón de regreso */
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            padding: 10px 20px;
+            background-color: #ff0015; /* Color de fondo del botón */
+            color: white; /* Color de texto del botón */
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #f80404; /* Hover en el botón */
+        }
+
+        /* Estilo para la descripción de los personajes */
+        .character-info {
+            font-size: 14px;
+            margin-top: 10px;
+            color: #d4d4d4;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container" style="text-align: center; margin: 0 auto; max-width: 1200px;">
+        <button class="back-button" onclick="window.location.href='index.html'">Volver</button>
+        <h1 class="title">Apex Legends</h1>
+        <div class="characters">
+            <!-- Fila 1 de personajes -->
+            <div class="character-row" style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+                <div class="character" style="text-align: center; flex-basis: 30%; margin: 0 30px;">
+                    <img src="img/wraith.jpg" alt="Personaje 1" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 10px;">
+                    <h2 style="font-size: 1.5em; margin: 10px 0;">Wraith</h2>
+                    <p class="character-info" style="font-size: 1.2em;">Una asesina sigilosa con habilidades de teletransportación y cloaking.</p>
+                </div>
+                <div class="character" style="text-align: center; flex-basis: 30%; margin: 0 30px;">
+                    <img src="img/Bangalore.jpg" alt="Personaje 2" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 10px;">
+                    <h2 style="font-size: 1.5em; margin: 10px 0;">Bangalore</h2>
+                    <p class="character-info" style="font-size: 1.2em;">Experta en evasión y combate, capaz de desplegar humo y crear confusión.</p>
+                </div>
+                <div class="character" style="text-align: center; flex-basis: 30%; margin: 0 30px;">
+                    <img src="img/Gibraltar.jpg" alt="Personaje 3" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 10px;">
+                    <h2 style="font-size: 1.5em; margin: 10px 0;">Gibraltar</h2>
+                    <p class="character-info" style="font-size: 1.2em;">Tanque robusto con una enorme capacidad defensiva y habilidades para proteger a su equipo.</p>
+                </div>
+            </div>
+            <!-- Fila 2 de personajes -->
+            <div class="character-row" style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+                <div class="character" style="text-align: center; flex-basis: 30%; margin: 0 30px;">
+                    <img src="img/Bloodhound.jpg" alt="Personaje 4" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 10px;">
+                    <h2 style="font-size: 1.5em; margin: 10px 0;">Bloodhound</h2>
+                    <p class="character-info" style="font-size: 1.2em;">Rastreador con la capacidad de seguir enemigos y localizarlos fácilmente.</p>
+                </div>
+                <div class="character" style="text-align: center; flex-basis: 30%; margin: 0 30px;">
+                    <img src="img/Caustic.jpg" alt="Personaje 5" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 10px;">
+                    <h2 style="font-size: 1.5em; margin: 10px 0;">Caustic</h2>
+                    <p class="character-info" style="font-size: 1.2em;">Experto en usar gases tóxicos y trampas para controlar el terreno.</p>
+                </div>
+                <div class="character" style="text-align: center; flex-basis: 30%; margin: 0 30px;">
+                    <img src="img/Mirage.jpg" alt="Personaje 6" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 10px;">
+                    <h2 style="font-size: 1.5em; margin: 10px 0;">Mirage</h2>
+                    <p class="character-info" style="font-size: 1.2em;">Experto en engañar a sus enemigos creando hologramas y confusión.</p>
+                </div>
+            </div>
+            <!-- Fila 3 de personajes -->
+            <div class="character-row" style="display: flex; justify-content: space-between; margin-bottom: 40px;">
+                <div class="character" style="text-align: center; flex-basis: 30%; margin: 0 30px;">
+                    <img src="img/Octane.jpg" alt="Personaje 7" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 10px;">
+                    <h2 style="font-size: 1.5em; margin: 10px 0;">Octane</h2>
+                    <p class="character-info" style="font-size: 1.2em;">Rápido y letal, capaz de usar un estimulante para moverse a gran velocidad.</p>
+                </div>
+                <div class="character" style="text-align: center; flex-basis: 30%; margin: 0 30px;">
+                    <img src="img/Pathfinder.jpg" alt="Personaje 8" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 10px;">
+                    <h2 style="font-size: 1.5em; margin: 10px 0;">Pathfinder</h2>
+                    <p class="character-info" style="font-size: 1.2em;">Un explorador con un gancho de agarre y un gran sentido de la orientación.</p>
+                </div>
+                <div class="character" style="text-align: center; flex-basis: 30%; margin: 0 30px;">
+                    <img src="img/Revenant.jpg" alt="Personaje 9" style="width: 100%; max-width: 200px; border-radius: 10px; margin-bottom: 10px;">
+                    <h2 style="font-size: 1.5em; margin: 10px 0;">Revenant</h2>
+                    <p class="character-info" style="font-size: 1.2em;">Un asesino imparable con habilidades para desactivar y atacar con precisión mortal.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Legends</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+        }
+        header {
+            background-color: #000000;
+            padding: 20px;
+        }
+        header img {
+            height: 60px;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav button {
+            background-color: #2e2e2e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        nav button:hover {
+            background-color: #ec0014;
+            transform: translateY(-5px); /* Movimiento hacia arriba */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+        }
+        .hero {
+            position: relative;
+            margin-top: 20px;
+        }
+        .hero img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+        .hero h1 {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 48px;
+            color: #fff;
+            text-shadow: 2px 2px 5px #000;
+        }
+        .hero p {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            color: #fff;
+            text-shadow: 1px 1px 3px #000;
+        }
+        .hero .buttons {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .hero .buttons button {
+            background-color: #e93d4c;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+            position: relative;
+        }
+        .hero .buttons button:hover {
+            background-color: #2e2e2e;
+            transform: translateY(-5px); /* Movimiento hacia arriba */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra al hacer hover */
+        }
+        /* Estilo para el contenedor del video dentro del botón */
+        .video-container {
+            display: none; /* Inicialmente oculto */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500%;
+            height: 900px;
+            margin-top: 100px;
+        }
+        .video-container iframe {
+            width: 100%;
+            height: 80%;
+            border: none;
+        }
+        .news-section {
+            margin: 50px 20px;
+        }
+        .news-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .news-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px; /* Espacio entre los items */
+        }
+        .news-item {
+            background-color: #2e2e2e;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 500px; /* Aumento el tamaño máximo */
+            width: 500%;
+            box-sizing: border-box;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .news-item img {
+            width: 100%;
+            height: 250px; /* Altura fija */
+            object-fit: cover; /* Mantiene la proporción y cubre el área */
+            border-radius: 5px;
+        }
+        .news-item p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .news-item:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/logo.jpg" alt="Logo Apex Legends">
+    </header>
+    <nav>
+        <a href="pagina1.html" style="display: inline-block; padding: 10px 20px; background-color: #cf0000; color: white; text-align: center; text-decoration: none; border-radius: 5px;">Personajes</a>
+        <a href="pagina2.html" style="display: inline-block; padding: 10px 20px; background-color: #cf0000; color: white; text-align: center; text-decoration: none; border-radius: 5px;">Pase de Batalla</a>
+    </nav>
+    <section class="hero">
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmlnbnowM3ljMng2cGZlZDJsazFsYWV3ZzM1cXg1em1jdnMycGx4ZSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ov3RQZYiO8Bjy3suFz/giphy.gif" alt="Apex Legends">
+        <h1>Apex Legends</h1>
+        <p>¡Vuelve al origen con Apex Legends: Desde la brecha!</p>
+        <div class="buttons">
+            <button onclick="mostrarVideo()">Ver Tráiler del Juego</button>
+            <!-- Contenedor del video dentro del botón -->
+            <div class="video-container" id="videoContainer">
+                <iframe src="img/Apex Legends - Official Cinematic Launch Trailer - GameSpot Trailers (1080p, h264, youtube).mp4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+    <section class="news-section">
+        <h2>Últimas Noticias</h2>
+        <div class="news-grid">
+            <div class="news-item">
+                <img src="img/noticia1.jpeg" alt="Noticia 1">
+                <p>Texto descriptivo de la primera noticia.</p>
+            </div>
+            <div class="news-item">
+                <img src="img/noticia2.jpeg" alt="Noticia 2">
+                <p>Texto descriptivo de la segunda noticia.</p>
+            </div>
+            <div class="news-item">
+                <img src="img/noticia3.jpeg" alt="Noticia 3">
+                <p>Texto descriptivo de la tercera noticia.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function mostrarVideo() {
+            // Mostrar el contenedor de video
+            var videoContainer = document.getElementById("videoContainer");
+            if (videoContainer.style.display === "block") {
+                videoContainer.style.display = "none"; // Si ya está visible, lo ocultamos
+            } else {
+                videoContainer.style.display = "block"; // Si está oculto, lo mostramos
+            }
+        }
+    </script>
+</body>
+</html>

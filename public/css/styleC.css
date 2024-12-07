@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;  
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #14112E;
+    min-height: 100%; /* Asegura que el cuerpo ocupe al menos el 100% de la ventana */
+}
+
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    left: 10%;
+}
+
+.header {
+    background-image: url(img/bg.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #A0A3C4;
+    display: block;
+    font-weight: 600;
+}
+
+.menu .navbar ul li a:hover {
+    color: #FFFFFF;
+}
+
+#menu {
+    display: none;
+}
+
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-txt {
+    width: 50%;
+}
+
+.header-txt span {
+    font-size: 14px;
+    color: #5B5BD7;
+    text-transform: capitalize;
+}
+
+.header-txt h1 {
+    font-size: 50px;
+    line-height: 70px;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+}
+
+.header-img{
+    width: 50%;
+}
+
+.header-img img{
+    height: 500px;
+    width: 600px;
+}
+
+.games{
+    padding: 0 0 50px 0;
+    position: relative;
+    color:#FFFFFF
+}
+
+.ba{
+    width: 250px;
+    height: 200px;
+    position: absolute;
+    left: -250px;
+    z-index: -1;
+}
+
+.txt{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.txt h2{
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+
+.games-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.game img{
+    margin: 0 5px;
+    width: 190px;
+    border-radius: 15px;
+}
+
+.follo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.follo img {
+    width: 20px;
+}
+
+.follo h3 {
+    color: #FFFFFF;
+    font-size: 13px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+label, input {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #4a148c;
+}
+
+.menu-item {
+    color: purple; /* Color de texto por defecto */
+    text-decoration: none; /* Quitar subrayado del enlace */
+    transition: color 0.3s ease; /* Transición suave */
+    cursor: pointer; /* Mostrar cursor de mano al pasar por encima */
+}
+
+.menu-item:hover {
+    color: orange; /* Color al pasar el mouse */
+}
+
+/*-------------------------------------------"*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Asegura que el html y body ocupen el 100% de la altura de la ventana */
+}
+
+.content {
+    flex-grow: 1; /* El contenido crecerá para ocupar el espacio disponible */
+    padding: 20px;
+    color: white;
+}
+
+.social-bar {
+    background-color: #0D0E24; /* Color de fondo */
+    padding: 15px 0;
+    text-align: center;
+    color: #FFFFFF; /* Color del texto */
+    width: 100%; /* Ocupa todo el ancho de la ventana */
+}
+
+.social-bar p {
+    margin-bottom: 10px; /* Espacio debajo del texto */
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centra los íconos horizontalmente */
+}
+
+.social-icon {
+    display: flex;
+    align-items: center; /* Alinea los íconos y el texto verticalmente */
+    margin: 0 20px; /* Espacio entre los íconos */
+    color: white;
+    text-decoration: none; /* Elimina subrayado */
+}
+
+.social-icon img {
+    width: 30px; /* Ajusta el tamaño del ícono */
+    height: 30px;
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+    transition: transform 0.3s;
+}
+
+.social-icon:hover img {
+    transform: scale(1.2); /* Aumenta el tamaño del ícono al pasar el mouse */
+}
+
+.footer {
+    background-color: #000; /* Color negro */
+    color: #fff; /* Texto en blanco */
+    text-align: center; /* Centrar el texto */
+    padding: 20px 0; /* Espaciado vertical */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.copyright {
+    font-size: 14px; /* Tamaño de la fuente */
+    font-family: Arial, sans-serif;
+}
+
+
+.logo-container {
+    display: inline-block;
+    position: relative;
+}
+
+
+.logo.fijo {
+    width: 150px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+}
+
+.logo.movible {
+    width: 50px; /* Ajusta el tamaño según sea necesario */
+    height: auto;
+    position: absolute; /* Permite mover el logo */
+    top: -50px; /* Ajusta esta posición según sea necesario */
+    left: -205px; /* Ajusta esta posición según sea necesario */
+}
+
+.containergg {
+    max-width: 30%;
+    margin: 10 auto;
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+  }
+
+  div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 15%;
+    padding: auto;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+
+  .productos {
+    background-image: url(img/bg.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    min-height: 30%;
+}
+
+div.animation {
+    width: 15%;
+    transition: width 1s;
+  }
+  
+  .animation:hover {
+    width: 15.5%;
+  }
+
+.contenedo {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 30px;
+    color: white;
+    margin: 0;
+}
+
+.movable {
+    position: absolute; /* Posición absoluta para mover libremente */
+    top: 17px; /* Cambia estos valores para ajustar la posición */
+    left: 60px;
+}
+
+.game {
+    color: #9b59b6; /* Color morado para 'Game' */
+}
+
+.burst {
+    color: white; /* Color blanco para 'Burst' */
+}
+
+div.texto{
+    left: 20%;
+  }
+
+  .suave {border-radius: 20px;}
+
+  div.subir {
+    position: relative;
+    left: 30px;
+    border: 3px solid #4a148c;
+    max-width: 14.2%;
+    align-content: center;
+    text-align: center;
+  }
+
+  /*---------------------------------*/
+/*Barra de busqueda*/
+
+/* Estilos para la barra de búsqueda */
+.search-bar {
+    position: fixed; /* Ahora está fija en la parte superior */
+    top: 20px; /* Ajusta la distancia desde la parte superior */
+    right: 20px; /* Ajusta la distancia desde la derecha */
+    display: flex;
+    align-items: center; /* Alineación vertical centrada */
+    z-index: 1000; /* Asegura que la barra esté por encima de otros elementos */
+}
+
+/* Estilos para la entrada de búsqueda */
+.search-input {
+    padding: 10px 15px; /* Espaciado dentro del campo de búsqueda */
+    border: 2px solid #9b59b6; /* Color morado */
+    border-radius: 25px; /* Bordes curvados */
+    outline: none;
+    width: 250px; /* Ancho reducido para que se vea más compacta */
+    background-color: #e3d3e6; /* Color morado claro para el fondo */
+    transition: border-color 0.3s; /* Transición suave para el color del borde */
+}
+
+/* Cambio de borde cuando la barra de búsqueda tiene el foco */
+.search-input:focus {
+    border-color: #8e44ad; /* Color morado más oscuro al enfocarse */
+}
+
+/* Estilo para el menú desplegable */
+#game-list {
+    position: fixed; /* Lo hace fijo también */
+    top: 60px; /* Ajusta la distancia desde la parte superior, debajo de la barra de búsqueda */
+    right: 20px; /* Se alinea con la derecha de la barra de búsqueda */
+    width: 250px; /* Asegura que el menú tenga el mismo ancho que la barra */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 200px; /* Limita la altura del menú */
+    overflow-y: auto;
+    display: none; /* Oculta el menú por defecto */
+    z-index: 999; /* Asegura que el menú esté debajo de la barra de búsqueda */
+}
+
+/* Estilo para los elementos del menú */
+#game-list li {
+    padding: 8px 12px; /* Tamaño reducido para los elementos */
+    border-bottom: 1px solid #ddd;
+}
+
+#game-list li:last-child {
+    border-bottom: none; /* Elimina el borde inferior en el último ítem */
+}
+
+#game-list a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+#game-list li:hover {
+    background-color: #d1c4e9; /* Lila claro en hover */
+}
+
+
+.ba {
+    margin: 20px auto;
+    width: 100px;
+    height: 100px;
+    top: -40px;
+    left: -100px;
+    }
+
+.txt {
+    display: inline-block;
+}
+
+
